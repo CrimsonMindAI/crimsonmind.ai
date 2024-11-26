@@ -1,0 +1,11 @@
+.ProjectBox {
+    @apply text-slate-50;
+    text-decoration:none;
+    box-shadow: -12px 12px 0 var(--color-primary);
+
+    border:none;
+    &:hover {
+        background-color:var(--color-primary-dark);
+        box-shadow: -12px 12px 0 var(--color-primary-dark);
+    }
+}

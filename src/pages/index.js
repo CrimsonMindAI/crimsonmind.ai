@@ -1,128 +1,61 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+import ProjectBox from "../components/patterns/ProjectBox/ProjectBox";
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
+export default function IndexPage() {
+    return (
+        <Layout>
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+            <div className="grid gap-4 mb-4 w-full">
+                <div className="w-full">
+                    <h1 className="text-8xl font-bold inline-block mb-4">
+                        CrimsonMind<br/>
+                    </h1>
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+                    <p className="text-2xl mb-6">
+                        CrimsonMind was founded in 2024 by <a href="">Joe Buckle</a>, a software developer
+                        with over 20 years of experience, primarily in the online
+                        publishing sector, to explore how AI can transform both
+                        business and personal life.
+                    </p>
+                </div>
+            </div>
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+            <div className="grid gap-4 mb-4 w-full">
+                <div className="w-full">
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+                    <h3 className="text-4xl font-bold inline-block mb-6">
+                        Why?<br/>
+                    </h3>
 
-export default IndexPage
+                    <p className="text-2xl mb-6">
+                        CrimsonMind emerged from a deep fascination
+                        with the groundbreaking advancements in AI chat
+                        technology and the boundless possibilities they
+                        unlock. In this exciting phase of its infancy,
+                        it offers an unparalleled canvas for exploration,
+                        experimentation, and innovation.
+                    </p>
+                </div>
+            </div>
+
+            <div className="grid gap-4 mb-4 h-screen w-full">
+                <div className="w-full">
+
+                    <h3 className="text-4xl font-bold inline-block mb-6">Projects</h3>
+
+                    <div className="grid grid-cols-2 gap-8 w-full">
+                        <ProjectBox link={"/projects/describe-image"} title={"Describe Image"}
+                                    description={"Upload your image to see how AI describes it."}/>
+
+                        <p className="text-2xl mb-6">
+                            ... and more to come.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    )
+}
