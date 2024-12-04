@@ -41,7 +41,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        whitelist: ["GATSBY_IMAGES_API_URL", "GATSBY_IMAGES_API_KEY"]
+        allowList: ["GATSBY_IMAGES_API_URL", "GATSBY_API_GATEWAY_URL"]
       },
     },
   ],

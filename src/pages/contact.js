@@ -7,11 +7,11 @@ export default function ContactPage() {
 
             <div className="grid gap-4 mb-4 w-full">
                 <div className="w-full">
-                    <h1 className="text-4xl inline-block mb-4">
+                    <h1 className="text-3xl sm:text-4xl font-bold inline-block mb-4 break-words">
                         Contact<br/>
                     </h1>
 
-                    <p className="text-2xl mb-6">
+                    <p className="text-1xl sm:text-2xl mb-6">
                         CrimsonMind was created by Joe Buckle from&nbsp;
                         <a href="https://white-fire.co.uk" target="_blank">
                             White Fire Web Design
@@ -19,7 +19,7 @@ export default function ContactPage() {
                         a web development company based in the UK.
                     </p>
 
-                    <p className="text-2xl mb-6">
+                    <p className="text-1xl sm:text-2xl mb-6">
                         For all enquiries, please contact us at&nbsp;
                         <a href="mailto:hello@white-fire.co.uk">hello@white-fire.co.uk</a>.
                     </p>

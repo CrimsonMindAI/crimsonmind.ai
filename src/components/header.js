@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -13,18 +12,6 @@ const Header = ({ siteTitle }) => (
 
     className="p-4"
   >
-      { /* <Link
-      to="/"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
-    >
-      {siteTitle}
-    </Link> */ }
-      <Link to="/">
-          <span className="icon-[mdi--github]"></span>
-      </Link>
   </header>
 )
 

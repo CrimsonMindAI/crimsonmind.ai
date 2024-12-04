@@ -7,8 +7,8 @@ Website assets for the website crimsonmind.io
 1. **Clone the repository.**
 
     ```shell
-    git clone <repository-url>
-    cd describe-image
+    git clone git@github.com:CrimsonMindAI/crimsonmind.io.git
+    cd crimsonmind.io
     ```
 
 2. **Install dependencies.**
@@ -23,7 +23,7 @@ Website assets for the website crimsonmind.io
 
     ```plaintext
     GATSBY_IMAGES_API_URL=<your-api-url>
-    GATSBY_IMAGES_API_KEY=<your-api-key>
+    GATSBY_API_GATEWAY_URL=<gateway-url>
     ```
 
 4. **Start the development server.**

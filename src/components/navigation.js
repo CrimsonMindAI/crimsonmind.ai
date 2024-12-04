@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import Logo from "./patterns/Logo/Logo";
 import NavigationLink from "./patterns/NavigationLink/NavigationLink";
+import GithubIcon from "./patterns/GithubIcon/GithubIcon";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const NavBar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className="bg-gray-800 pl-4 pr-4 sticky top-0">
+        <nav className="bg-gray-800 pl-4 pr-4 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -44,6 +45,8 @@ const NavBar = () => {
                             <NavigationLink to={"/contact"} text={"Contact"} />
                         </div>
                     </div>
+
+                    <GithubIcon url={"https://github.com/CrimsonMindAI"} />
                 </div>
             </div>
 
@@ -54,19 +57,7 @@ const NavBar = () => {
                         to="/"
                         className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                     >
-                        Home
-                    </Link>
-                    <Link
-                        to="/about"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                    >
                         About
-                    </Link>
-                    <Link
-                        to="/services"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                    >
-                        Services
                     </Link>
                     <Link
                         to="/contact"

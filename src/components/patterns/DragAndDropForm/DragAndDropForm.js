@@ -11,6 +11,10 @@ const DragAndDropForm = props => {
 
     const onDrop = useCallback((acceptedFiles) => {
         const file = acceptedFiles[0];
+        if (file.size > 10 * 1024 * 1024) { // 10MB in bytes
+            setError("File size exceeds 10MB. Please upload a smaller file.");
+            return;
+        }
         setFile(file);
         try {
             const previewUrl = URL.createObjectURL(file);
@@ -59,9 +63,9 @@ const DragAndDropForm = props => {
             <input {...getInputProps()} />
             {!preview ?
                 isDragActive ? (
-                    <p className="text-blue-500">Drop the files here...</p>
+                    <p className="text-blue-500">Drop the files here... (Max 10MB)</p>
                 ) : (
-                    <p className="text-gray-500">Drag 'n' drop some files here, or click to select files</p>
+                    <p className="text-gray-500">Drag 'n' drop some files here, or click to select files (Max 10MB)</p>
                 )
                 : null
             }

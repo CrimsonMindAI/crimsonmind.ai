@@ -248,3 +248,31 @@ a {
     border-bottom-color:transparent;
   }
 }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+ul li::before {
+  content: "•"; /* You can use any symbol or even an image */
+  position: absolute;
+  left: 0;
+  color: var(--color-primary); /* Customize the color */
+  font-size: 1.2em; /* Customize the size */
+  line-height: 1;
+}
+
+.IconLink {
+  border: none;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
